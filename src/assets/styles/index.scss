@@ -1,5 +1,6 @@
-$blue: darkslateblue;
-$bg-body: antiquewhite;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 html,
 body {
@@ -8,38 +9,20 @@ body {
   font-family: 'Courier New', Courier, monospace;
 }
 
-// A general comment that should be
-// stripped out in production
-body {
-  color: $blue;
-  background-color: $bg-body;
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-}
-
-main {
-  display: flex;
-  flex-grow: 1;
-  align-items: center;
-
-  img {
-    width: 6rem;
-  }
-}
-
-img {
-  max-width: 100%;
-  height: auto;
-}
-
 .icon {
-  display: inline-block;
-  height: 1em;
-  width: 1em;
-  margin-right: 0.25em;
-  vertical-align: middle;
-  font-size: 1.5em;
-  fill: currentColor;
-  pointer-events: none;
+  width: 100%;
+  height: 100%;
+}
+
+.icon--ninjastar {
+  animation: spin 10s linear infinite;
+
+  @keyframes spin {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
 }

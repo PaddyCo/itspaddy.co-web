@@ -1,6 +1,9 @@
 const path = require('path');
 const TerserPlugin = require('terser-webpack-plugin');
 const PostCSSPresetEnv = require('postcss-preset-env');
+const PurgeCSS = require('@fullhuman/postcss-purgecss');
+const TailwindCSS = require('tailwindcss');
+const Autoprefixer = require('autoprefixer');
 const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const { WebpackManifestPlugin } = require('webpack-manifest-plugin');
@@ -55,7 +58,7 @@ module.exports = {
           'css-loader',
           {
             loader: 'postcss-loader',
-            options: { postcssOptions: { plugins: [PostCSSPresetEnv] } }
+            options: { postcssOptions: { plugins: [PostCSSPresetEnv, TailwindCSS({ purge: false }), isDev ? null : PurgeCSS({ content: ['./_site/**/*.html'] }), Autoprefixer] } }
           },
           'sass-loader'
         ]

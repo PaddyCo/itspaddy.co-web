@@ -24,6 +24,8 @@
     "@babel/cli": "^7.12.10",
     "@babel/core": "^7.12.10",
     "@babel/preset-env": "^7.12.10",
+    "@fullhuman/postcss-purgecss": "^3.0.0",
+    "autoprefixer": "^10.1.0",
     "babel-loader": "^8.2.2",
     "cheerio": "^1.0.0-rc.3",
     "core-js": "^3.8.1",
@@ -50,9 +52,11 @@
     "sass-loader": "^10.1.0",
     "source-map-explorer": "^2.5.1",
     "svg-sprite": "^1.5.0",
+    "tailwindcss": "^2.0.2",
     "vinyl": "^2.2.1",
     "webpack": "^5.10.1",
     "webpack-cli": "^4.2.0",
     "webpack-manifest-plugin": "^3.0.0"
-  }
+  },
+  "dependencies": {}
 }
